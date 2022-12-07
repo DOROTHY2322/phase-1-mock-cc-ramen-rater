@@ -8,7 +8,8 @@ ramens.forEach(renderRamen)
 }
 //adding images
 function renderRamen(ramen){
-    const ramenMenuDiv = document.getElementById('ramen-menu');
+    const ramenMenuDiv =element('ramen-menu');
+
     const ramenImage = document.createElement("img");
     ramenImage.src=ramen.image;
     ramenMenuDiv.append(ramenImage)
@@ -17,6 +18,17 @@ function renderRamen(ramen){
     ramenImage.addEventListener("click", e => renderDetails(ramen))
 }
 function renderDetails(ramen) {
-    console.log(ramen.image)
+    const ramenDetailsDiv = document.getElementById("ramen-detail");
+    const detailImage = element("detail-image")
+   const ramenName = element("ramen-name")
+   const restaurantName =element("restaurant-name") 
 
+   detailImage.src= ramen.image;
+   detailImage.alt= ramen.name;
+   ramenName.textcontent =ramen.restaurant;
+
+}
+
+function element(elementName){
+    return document.getElementById(elementName)
 }
