@@ -34,6 +34,7 @@ function renderDetails(ramen){
    commentDisplay.innerHTML = ramen.comment
 
 }
+//adding new object
 function createNewRamen(e){
     e.preventDefault()
     
