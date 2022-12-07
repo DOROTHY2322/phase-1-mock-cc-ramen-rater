@@ -1,3 +1,5 @@
+//adding a new ramen in the form
+element('new-ramen').addEventListener('submit',createNewRamen)
 //fetching data from the Api server
 fetch("http://localhost:3000/ramens")
 .then((res) =>res.json())
@@ -32,7 +34,19 @@ function renderDetails(ramen){
    commentDisplay.innerHTML = ramen.comment
 
 }
+function createNewRamen(e){
+    e.preventDefault()
+    
+    const newRamen ={
+        name:e.target.name.value,
+        rating:e.target.rating.value,
+        restaurant:e.target.restaurant.value,
+        image:e.target.image.value,
+        comment:e.target["new-comment"].value,
+    };
+    renderRamen(newRamen);
 
+}
 function element(elementName){
 return document.getElementById(elementName)
 }
